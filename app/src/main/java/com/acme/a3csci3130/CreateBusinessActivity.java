@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class CreateContactAcitivity extends Activity {
+public class CreateBusinessActivity extends Activity {
 
     private Button submitButton;
     private EditText nameField, emailField;
@@ -15,7 +15,7 @@ public class CreateContactAcitivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_contact_acitivity);
+        setContentView(R.layout.activity_create_business_activity);
         //Get the app wide shared variables
         appState = ((MyApplicationData) getApplicationContext());
 
@@ -29,7 +29,7 @@ public class CreateContactAcitivity extends Activity {
         String personID = appState.firebaseReference.push().getKey();
         String name = nameField.getText().toString();
         String email = emailField.getText().toString();
-        Contact person = new Contact(personID, name, email);
+        Business person = new Business(personID, name, email);
 
         appState.firebaseReference.child(personID).setValue(person);
 
