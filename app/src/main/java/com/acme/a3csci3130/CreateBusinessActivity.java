@@ -23,12 +23,12 @@ public class CreateBusinessActivity extends Activity{
         //Get the app wide shared variables
         appState = ((MyApplicationData) getApplicationContext());
         //fill spinners
-        primaryBusinessSpinner = (Spinner) findViewById(R.id.primaryBusinessSpinner);
+        primaryBusinessSpinner = (Spinner) this.findViewById(R.id.primaryBusinessSpinner);
+        provinceSpinner = (Spinner) this.findViewById(R.id.provinceSpinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.businessTypesArray, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         primaryBusinessSpinner.setAdapter(adapter);
-        provinceSpinner = (Spinner) findViewById(R.id.provinceSpinner);
         adapter = ArrayAdapter.createFromResource(this,
                 R.array.provincesArray, android.R.layout.simple_spinner_item);
         provinceSpinner.setAdapter(adapter);
