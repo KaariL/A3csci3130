@@ -27,7 +27,7 @@ public class MainActivity extends Activity {
 
         //Set-up Firebase
         appData.firebaseDBInstance = FirebaseDatabase.getInstance();
-        appData.firebaseReference = appData.firebaseDBInstance.getReference("contacts");
+        appData.firebaseReference = appData.firebaseDBInstance.getReference("businesses");
 
         //Get the reference to the UI contents
         businessListView = (ListView) findViewById(R.id.listView);
@@ -46,8 +46,8 @@ public class MainActivity extends Activity {
             // onItemClick method is called everytime a user clicks an item on the list
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Business person = (Business) firebaseAdapter.getItem(position);
-                showDetailView(person);
+                Business business = (Business) firebaseAdapter.getItem(position);
+                showDetailView(business);
             }
         });
     }
