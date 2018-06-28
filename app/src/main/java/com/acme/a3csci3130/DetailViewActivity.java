@@ -53,12 +53,9 @@ public class DetailViewActivity extends Activity {
             int spinnerPosition = adapter.getPosition(compareValue);
             provinceSpinner.setSelection(spinnerPosition);
         }
-        //
-
     }
 
     public void updateBusiness(View v){
-        //TODO: Update business funcionality
         String UID = receivedBusinessInfo.businessNumber;
         String name = nameField.getText().toString();
         String address = addressField.getText().toString();
@@ -68,8 +65,8 @@ public class DetailViewActivity extends Activity {
         appState.firebaseReference.child(UID).setValue(business);
     }
 
-    public void eraseBusiness(View v)
-    {
-        //TODO: Erase business functionality
+    public void eraseBusiness(View v) {
+        String UID = receivedBusinessInfo.businessNumber;
+        appState.firebaseReference.child(UID).setValue(null);
     }
 }
