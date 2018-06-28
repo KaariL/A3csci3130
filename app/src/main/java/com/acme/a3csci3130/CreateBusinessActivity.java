@@ -20,6 +20,8 @@ public class CreateBusinessActivity extends Activity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_business_activity);
+        //Get the app wide shared variables
+        appState = ((MyApplicationData) getApplicationContext());
         //fill spinners
         primaryBusinessSpinner = (Spinner) findViewById(R.id.primaryBusinessSpinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
@@ -30,10 +32,6 @@ public class CreateBusinessActivity extends Activity{
         adapter = ArrayAdapter.createFromResource(this,
                 R.array.provincesArray, android.R.layout.simple_spinner_item);
         provinceSpinner.setAdapter(adapter);
-        //Get the app wide shared variables
-        appState = ((MyApplicationData) getApplicationContext());
-
-
 
         submitButton = (Button) findViewById(R.id.submitButton);
         nameField = (EditText) findViewById(R.id.nameField);
@@ -46,8 +44,8 @@ public class CreateBusinessActivity extends Activity{
         String UID = appState.firebaseReference.push().getKey();
         String name = nameField.getText().toString();
         String address = addressField.getText().toString();
-        String primaryBusiness = primaryBusinessSpinner.getSelectedItem().toString();//get it from spinner
-        String province = provinceSpinner.getSelectedItem().toString();//gt from spinner
+        String primaryBusiness = primaryBusinessSpinner.getSelectedItem().toString();
+        String province = provinceSpinner.getSelectedItem().toString();
         Business business = new Business(UID, name, primaryBusiness, address, province);
 
         appState.firebaseReference.child(UID).setValue(business);

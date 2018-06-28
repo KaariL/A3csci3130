@@ -21,17 +21,13 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         //Get the app wide shared variables
         MyApplicationData appData = (MyApplicationData)getApplication();
-
         //Set-up Firebase
         appData.firebaseDBInstance = FirebaseDatabase.getInstance();
         appData.firebaseReference = appData.firebaseDBInstance.getReference("businesses");
-
         //Get the reference to the UI contents
         businessListView = (ListView) findViewById(R.id.listView);
-
         //Set up the List View
        firebaseAdapter = new FirebaseListAdapter<Business>(this, Business.class,
                 android.R.layout.simple_list_item_1, appData.firebaseReference) {
