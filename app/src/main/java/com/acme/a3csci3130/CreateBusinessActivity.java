@@ -12,7 +12,7 @@ import android.widget.Spinner;
 public class CreateBusinessActivity extends Activity{
 
     private Button submitButton;
-    private EditText nameField, addressField;
+    private EditText businessNumberField, nameField, addressField;
     private Spinner primaryBusinessSpinner, provinceSpinner;
     private MyApplicationData appState;
 
@@ -32,21 +32,22 @@ public class CreateBusinessActivity extends Activity{
         adapter = ArrayAdapter.createFromResource(this,
                 R.array.provincesArray, android.R.layout.simple_spinner_item);
         provinceSpinner.setAdapter(adapter);
-
-        submitButton = (Button) findViewById(R.id.submitButton);
+        //
+        businessNumberField = (EditText) findViewById(R.id.businessNumberField);
         nameField = (EditText) findViewById(R.id.nameField);
         addressField = (EditText) findViewById(R.id.addressField);
-
+        submitButton = (Button) findViewById(R.id.submitButton);
     }
 
     public void submitInfoButton(View v) {
         //each entry needs a unique ID
         String UID = appState.firebaseReference.push().getKey();
+        String businessNumber = businessNumberField.getText().toString();
         String name = nameField.getText().toString();
         String address = addressField.getText().toString();
         String primaryBusiness = primaryBusinessSpinner.getSelectedItem().toString();
         String province = provinceSpinner.getSelectedItem().toString();
-        Business business = new Business(UID, name, primaryBusiness, address, province);
+        Business business = new Business(UID, businessNumber, name, primaryBusiness, address, province);
 
         appState.firebaseReference.child(UID).setValue(business);
 

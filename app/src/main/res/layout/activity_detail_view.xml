@@ -10,70 +10,87 @@
 
     <Spinner
         android:id="@+id/provinceSpinner"
-        android:layout_width="395dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addressField" />
 
     <EditText
         android:id="@+id/addressField"
-        android:layout_width="395dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="11dp"
         android:ems="10"
         android:hint="Address"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/provinceSpinner"
-        app:layout_constraintStart_toStartOf="@+id/provinceSpinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/primaryBusinessSpinner" />
 
     <Spinner
         android:id="@+id/primaryBusinessSpinner"
-        android:layout_width="395dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="98dp"
-        app:layout_constraintEnd_toEndOf="@+id/addressField"
-        app:layout_constraintStart_toStartOf="@+id/addressField"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginEnd="42dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="7dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameField" />
 
     <EditText
         android:id="@+id/nameField"
-        android:layout_width="395dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="42dp"
+        android:layout_marginStart="42dp"
         android:layout_marginTop="8dp"
         android:hint="Name"
-        app:layout_constraintEnd_toEndOf="@+id/primaryBusinessSpinner"
-        app:layout_constraintStart_toStartOf="@+id/primaryBusinessSpinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/businessNumberField" />
+
+    <EditText
+        android:id="@+id/businessNumberField"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="42dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="16dp"
+        android:hint="Business Number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/updateButton"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="42dp"
         android:onClick="updateBusiness"
         android:text="Update Data"
+        app:layout_constraintBaseline_toBaselineOf="@+id/deleteButton"
         app:layout_constraintEnd_toStartOf="@+id/deleteButton"
-        app:layout_constraintHorizontal_bias="0.307"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/provinceSpinner" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/deleteButton"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginTop="28dp"
         android:onClick="eraseBusiness"
         android:text="Erase Contact"
-        app:layout_constraintBottom_toBottomOf="@+id/updateButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/provinceSpinner"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toEndOf="@+id/updateButton"
+        app:layout_constraintTop_toBottomOf="@+id/provinceSpinner" />
 
 
 </android.support.constraint.ConstraintLayout>

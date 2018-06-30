@@ -54,10 +54,10 @@ public class MainActivity extends Activity {
         startActivity(intent);
     }
 
-    private void showDetailView(Business person)
+    private void showDetailView(Business business)
     {
         Intent intent = new Intent(this, DetailViewActivity.class);
-        intent.putExtra("Business", person);
+        intent.putExtra("Business", business);
         startActivity(intent);
     }
 
