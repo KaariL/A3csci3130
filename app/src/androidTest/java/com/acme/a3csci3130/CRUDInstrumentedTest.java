@@ -38,7 +38,7 @@ public class CRUDInstrumentedTest {
         //Espresso.onData(allOf(is(instanceOf(String.class)), is("Fish Monger"))).perform(ViewActions.click());
         //Espresso.onData(allOf(is(instanceOf(String.class)), is("Fish Monger")))
         //        .perform(ViewActions.click());
-        //I dont know what I am asserting for here. 
+        //I dont know what I am asserting for here.
     }
 
 }
