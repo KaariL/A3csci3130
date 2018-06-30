@@ -8,6 +8,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+/**
+ * Displays business information and allows for both
+ * update and delete of business info
+ *
+ * @author  J Franz and K Landry
+ * @version 1.0
+ *
+ */
 public class DetailViewActivity extends Activity {
 
     private Button updateButton, deleteButton;
@@ -64,7 +72,6 @@ public class DetailViewActivity extends Activity {
         String province = provinceSpinner.getSelectedItem().toString();
         Business business = new Business(UID, businessNumber, name, primaryBusiness, address, province);
         appState.firebaseReference.child(UID).setValue(business);
-        //if ()
     }
 
     public void eraseBusiness(View v) {

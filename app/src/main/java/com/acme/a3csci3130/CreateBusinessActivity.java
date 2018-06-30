@@ -9,6 +9,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+/**
+ * create business object and store in firebase
+ *
+ *
+ * @author  J Franz and K Landry
+ * @version 1.0
+ *
+ */
 public class CreateBusinessActivity extends Activity{
 
     private Button submitButton;

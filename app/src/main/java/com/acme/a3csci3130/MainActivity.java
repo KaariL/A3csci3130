@@ -1,3 +1,4 @@
+
 package com.acme.a3csci3130;
 
 import android.app.Activity;
@@ -11,6 +12,14 @@ import android.widget.TextView;
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.google.firebase.database.FirebaseDatabase;
 
+/**
+ * Display business list view and provides access to
+ * detail view and create business
+ *
+ * @author  J Franz
+ * @version 1.0
+ *
+ */
 public class MainActivity extends Activity {
 
 
